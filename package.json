@@ -1,11 +1,14 @@
 {
-  "name": "phantasma",
+  "name": "@mainstreethub/phantasma",
   "version": "1.4.0",
   "description": "A high level promise based wrapper for phantomjs",
   "keywords": [
     "phantom",
     "phantomjs"
   ],
+  "publishConfig":{
+    "registry":"http://npm.infrastructure/"
+  },
   "main": "index.js",
   "homepage": "https://github.com/petecoop/phantasma",
   "bugs": "https://github.com/petecoop/phantasma/issues",
