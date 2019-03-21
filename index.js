@@ -120,8 +120,8 @@ Phantasma.prototype.init = function () {
         page.set('onNavigationRequested', function (url, type, willNavigate, main) {
           self.emit('onNavigationRequested', url, type, willNavigate, main);
         });
-        page.set('onResourceError', function (response) {
-          self.emit('onResourceError', response);
+        page.set('onResourceError', function (error) {
+          self.emit('onResourceError', error);
         });
         page.set('onResourceReceived', function (response) {
           self.emit('onResourceReceived', response);
