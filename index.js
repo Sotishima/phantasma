@@ -120,6 +120,9 @@ Phantasma.prototype.init = function () {
         page.set('onNavigationRequested', function (url, type, willNavigate, main) {
           self.emit('onNavigationRequested', url, type, willNavigate, main);
         });
+        page.set('onResourceError', function (error) {
+          self.emit('onResourceError', error);
+        });
         page.set('onResourceReceived', function (response) {
           self.emit('onResourceReceived', response);
         });
@@ -256,7 +259,7 @@ Phantasma.prototype.select = function (selector, value) {
 
 Phantasma.prototype.click = function (selector, y) {
   var self = this;
-  
+
   if (y) {
     return new this.promise(function (resolve, reject) {
       self.page.sendEvent('click', selector, y);
